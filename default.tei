@@ -29,7 +29,7 @@ $endif$
 $for(include-before)$
 $include-before$
 $endfor$
-<body>
+<body dir="auto">
 $body$
 </body>
 $for(include-after)$

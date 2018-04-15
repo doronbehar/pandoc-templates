@@ -48,7 +48,7 @@ $if(duration)$
   <meta name="duration" content="$duration$" />
 $endif$
 </head>
-<body>
+<body dir="auto">
 $for(include-before)$
 $include-before$
 $endfor$

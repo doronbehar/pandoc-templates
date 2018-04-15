@@ -5,7 +5,7 @@
     <dateModified>$date$</dateModified>
     <ownerName>$for(author)$$author$$sep$; $endfor$</ownerName>
   </head>
-  <body>
+  <body dir="auto">
 $body$
   </body>
 </opml>

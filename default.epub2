@@ -27,7 +27,7 @@ $for(header-includes)$
   $header-includes$
 $endfor$
 </head>
-<body$if(coverpage)$ id="cover"$endif$>
+<body dir="auto" $if(coverpage)$ id="cover"$endif$>
 $if(titlepage)$
 $for(title)$
 $if(title.text)$

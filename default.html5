@@ -40,6 +40,20 @@ $endif$
 $for(header-includes)$
   $header-includes$
 $endfor$
+$if(auto-scroll-on-reload)$
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$$(window).scroll(function() {
+  sessionStorage.scrollTop = $$(this).scrollTop();
+});
+
+$$(document).ready(function() {
+  if (sessionStorage.scrollTop != "undefined") {
+    $$(window).scrollTop(sessionStorage.scrollTop);
+  }
+});
+</script>
+$endif$
 </head>
 <body dir=auto>
 $for(include-before)$

@@ -113,17 +113,23 @@ $for(header-includes)$
 $endfor$
 $-------------------------------------------------------------------------------
 $if(auto-scroll-on-reload)$
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
-$$(window).scroll(function() {
-  sessionStorage.scrollTop = $$(this).scrollTop();
-});
+window.onscroll = function() {
+  sessionStorage.scrollTop = document.documentElement.scrollTop;
+};
 
-$$(document).ready(function() {
+function scrollToPreviousPosition() {
   if (sessionStorage.scrollTop != "undefined") {
-    $$(window).scrollTop(sessionStorage.scrollTop);
+    document.documentElement.scrollTop = sessionStorage.scrollTop;
   }
-});
+};
+
+if (document.readyState !== 'loading') {
+  scrollToPreviousPosition()
+} else {
+  document.addEventListener('DOMContentLoaded', scrollToPreviousPosition);
+}
+</script>
 $endif$
 </head>
 <body dir="auto">
